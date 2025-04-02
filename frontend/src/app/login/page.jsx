@@ -82,14 +82,16 @@ function AuthPage() {
       <div className="bg-white shadow-xl rounded-xl p-8 sm:p-10 w-full max-w-md border border-gray-300">
         {/* Logo */}
         <div className="flex justify-center mb-4">
-          <Image
-            src="https://i.postimg.cc/Y08pGqy4/logojpg-removebg-preview.png"
-            alt="Logo"
-            width={150}
-            height={50}
-            className="object-contain"
-            unoptimized={true}
-          />
+        <Link href="/">
+          <div className="flex items-center">
+            <img
+              src="/green-heart-with-leaf-outline_78370-2744-removebg-preview.png"
+              alt="Logo"
+              className="h-14"
+            />
+            <h1 className="ml-2 text-black text-2xl font-bold font-mono tracking-wide">Heartly</h1>
+          </div>
+        </Link>
         </div>
 
         {/* Title */}

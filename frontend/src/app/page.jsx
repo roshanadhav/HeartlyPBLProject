@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import Image from 'next/image';
 import PropTypes from 'prop-types';
 
 function HomeContent() {
@@ -10,29 +9,37 @@ function HomeContent() {
     <div className="relative mt-20 min-h-screen flex flex-col items-center text-center bg-white">
       {/* Hero Section */}
       <motion.div
-        className="w-full h-[700px] flex flex-col justify-center items-center 
-                   bg-cover bg-center bg-no-repeat shadow-lg border-t border-gray-300 py-8 relative"
+        className="w-full h-[580px] flex flex-col lg:flex-row justify-between items-center bg-white 
+                    py-8 px-6"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <div
-          className="absolute h-200 inset-0 bg-black bg-opacity-50"
-          style={{
-            backgroundImage: "url('https://scopeblog.stanford.edu/wp-content/uploads/2024/02/shutterstock_140225476.jpg')",
-          }}
-        ></div>{" "}
-        {/* Overlay */}
-        <div className="relative z-10">
-          <h1 className="text-5xl font-bold text-[#ADD8E6]">
+        {/* Left Side - Hero Image */}
+        <div className="lg:w-1/2 flex justify-center mt-6 lg:mt-0">
+          <img 
+            src="https://img.medscapestatic.com/vim/live/professional_assets/medscape/images/thumbnail_library/gty_240411_doctor_artificial_intelligence_800x450.jpg" 
+            alt="Doctor Consultation"
+            className="w-[500px] h-auto object-contain rounded-lg shadow-lg"
+          />
+        </div>
+
+        {/* Right Side - Text Content */}
+        <div className="lg:w-1/2 text-center lg:text-left lg:pl-10">
+          <motion.h1
+            className="text-5xl font-extrabold bg-gradient-to-r from-blue-400 to-purple-300 bg-clip-text text-transparent"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, delay: 0.2 }}
+          >
             Predict Your Heart Wellness
-          </h1>
-          <p className="mt-4 text-lg font-light text-gray-200">
+          </motion.h1>
+          <p className="mt-4 text-lg font-light text-gray-700 max-w-xl">
             Get AI-powered insights into your heart health with personalized recommendations.
           </p>
           <Link href="/predict">
             <motion.button
-              className="mt-6 bg-white text-black px-6 py-3 rounded-full font-semibold shadow-md hover:bg-gray-200 transition"
+              className="mt-6 px-8 py-3 text-lg font-semibold rounded-full shadow-md bg-gradient-to-r from-blue-500 to-purple-500 text-white transition-all hover:scale-105 hover:shadow-xl"
               whileHover={{ scale: 1.1 }}
             >
               Get Started
@@ -42,7 +49,7 @@ function HomeContent() {
       </motion.div>
 
       {/* Features Section */}
-      <div className="max-w-6xl mt-50 mx-auto my-12 grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+      <div className="max-w-6xl mb-20 mt-16 mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 px-6">
         <FeatureCard
           img="https://d2jx2rerrg6sh3.cloudfront.net/images/news/ImageForNews_776422_17123165547518811.jpg"
           title="Heart Risk Analysis"
@@ -66,16 +73,12 @@ function HomeContent() {
 // Feature Card Component
 const FeatureCard = ({ img, title, description }) => (
   <motion.div
-    className="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition border border-gray-300"
+    className="bg-white p-6 rounded-xl shadow-lg text-center border border-gray-200 transition-all hover:shadow-2xl hover:scale-105 transform duration-300"
     whileHover={{ scale: 1.05 }}
   >
-    <img
-      src={img}
-      alt={title}
-      className="w-full h-40 object-cover rounded-md"
-    />
-    <h3 className="mt-4 text-xl font-semibold text-black">{title}</h3>
-    <p className="mt-2 text-gray-700">{description}</p>
+    <img src={img} alt={title} className="w-full h-40 object-cover rounded-lg" />
+    <h3 className="mt-4 text-xl font-semibold text-gray-900">{title}</h3>
+    <p className="mt-2 text-gray-600">{description}</p>
   </motion.div>
 );
 FeatureCard.propTypes = {

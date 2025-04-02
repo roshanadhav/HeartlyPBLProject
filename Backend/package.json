@@ -1,1 +1,36 @@
-{"type":"module","name":"backend","version":"1.0.0","main":"index.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1","start":"node index.js","dev":"nodemon index.js"},"keywords":[],"author":"","license":"ISC","description":"","dependencies":{"@tensorflow/tfjs-node":"^4.22.0","axios":"^1.7.9","bcrypt":"^5.1.1","bcryptjs":"^3.0.2","cookie-parser":"^1.4.7","dotenv":"^16.4.7","express":"^4.21.2","jsonwebtoken":"^9.0.2","mongoose":"^8.10.1","multer":"^1.4.5-lts.1","nodemailer":"^6.10.0","socket.io":"^4.8.1","twilio":"^5.4.5"}}
+{
+  "type": "module",
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@tensorflow/tfjs-node": "^4.22.0",
+    "axios": "^1.7.9",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "csv-parser": "^3.2.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.10.1",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.10.0",
+    "pdf-lib": "^1.17.1",
+    "pdf-parse": "^1.1.1",
+    "pdf2json": "^3.1.5",
+    "pdfjs-dist": "^5.0.375",
+    "socket.io": "^4.8.1",
+    "twilio": "^5.4.5"
+  }
+}

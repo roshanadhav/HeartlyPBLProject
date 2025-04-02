@@ -1,74 +1,66 @@
 "use client";
-
 import { motion } from "framer-motion";
-import { FaMapMarkerAlt, FaMicrophone } from "react-icons/fa";
+import { FaHeartbeat, FaUsers, FaLaptopMedical, FaShieldAlt, FaChartLine, FaHandsHelping } from "react-icons/fa";
 
-const About = () => {
+export default function About() {
   return (
-    <div className="min-h-screen mt-14 bg-gray-100 text-gray-900">
-      {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center text-center py-16 px-6 bg-gray-100   text-black">
-        <motion.h1
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-4xl font-extrabold sm:text-5xl"
-        >
-          About Safetyfy
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 1 }}
-          className="mt-4 text-lg max-w-2xl"
-        >
-          Safetyfy is a revolutionary women’s safety app designed to ensure real-time security through **live location tracking** and **audio sharing** features.
-        </motion.p>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-16 px-6 max-w-5xl mx-auto">
-        <motion.h2
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          className="text-3xl font-bold text-center"
-        >
-          Key Features
-        </motion.h2>
-
-        <div className="mt-10 grid md:grid-cols-2 gap-8">
-          {/* Live Location Sharing Feature */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-white shadow-lg p-6 rounded-lg flex flex-col items-center text-center"
+    <div className="mt-20 min-h-screen bg-white text-black p-6 flex flex-col items-center text-center">
+      <motion.h1
+            className="text-5xl font-extrabold bg-gradient-to-r from-blue-400 to-purple-300 bg-clip-text text-transparent"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, delay: 0.2 }}
           >
-            <FaMapMarkerAlt className="text-blue-600 text-5xl mb-4" />
-            <h3 className="text-xl font-semibold">Live Location Sharing</h3>
-            <p className="mt-2 text-gray-600">
-              Instantly share your live location with trusted contacts in case of emergencies.
-            </p>
-          </motion.div>
-
-          {/* Audio Sharing Feature */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="bg-white shadow-lg p-6 rounded-lg flex flex-col items-center text-center"
-          >
-            <FaMicrophone className="text-red-600 text-5xl mb-4" />
-            <h3 className="text-xl font-semibold">Live Audio Streaming</h3>
-            <p className="mt-2 text-gray-600">
-              Stream live audio to your emergency contacts for immediate help.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+            About Heart Wellness Prediction
+          </motion.h1>
+          
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+        <FeatureCard 
+          icon={<FaHeartbeat size={50} className="text-red-500" />} 
+          title="Accurate Predictions" 
+          description="Using AI models, we provide reliable heart disease risk assessment." 
+        />
+        <FeatureCard 
+          icon={<FaUsers size={50} className="text-red-500" />} 
+          title="User-Friendly" 
+          description="Our intuitive interface ensures accessibility for everyone." 
+        />
+        <FeatureCard 
+          icon={<FaLaptopMedical size={50} className="text-red-500" />} 
+          title="Health Insights" 
+          description="Get detailed insights and preventive measures for heart wellness." 
+        />
+        <FeatureCard 
+          icon={<FaShieldAlt size={50} className="text-red-500" />} 
+          title="Secure & Private" 
+          description="Your health data remains confidential and protected." 
+        />
+        <FeatureCard 
+          icon={<FaChartLine size={50} className="text-red-500" />} 
+          title="Data-Driven Analysis" 
+          description="Our platform uses advanced analytics for better predictions." 
+        />
+        <FeatureCard 
+          icon={<FaHandsHelping size={50} className="text-red-500" />} 
+          title="Community Support" 
+          description="Engage with a health-conscious community for better well-being." 
+        />
+      </div>
     </div>
   );
-};
+}
 
-export default About;
+function FeatureCard({ icon, title, description }) {
+  return (
+    <motion.div 
+      initial={{ scale: 0.8, opacity: 0 }} 
+      animate={{ scale: 1, opacity: 1 }} 
+      transition={{ duration: 0.6 }}
+      className="bg-gray-100 shadow-lg rounded-2xl p-6 flex flex-col items-center text-center hover:shadow-2xl transition duration-300"
+    >
+      {icon}
+      <h2 className="text-xl font-semibold mt-3 text-black">{title}</h2>
+      <p className="text-gray-600 mt-2">{description}</p>
+    </motion.div>
+  );
+}

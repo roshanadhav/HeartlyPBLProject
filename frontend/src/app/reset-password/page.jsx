@@ -5,7 +5,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-
+import Link from "next/link";
 const ResetPassword = () => {
   const [email, setEmail] = useState("");
   const [otp, setOtp] = useState("");
@@ -49,13 +49,16 @@ const ResetPassword = () => {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-100 to-gray-300 p-6">
       <div className="bg-white shadow-lg rounded-2xl p-8 sm:p-12 w-full max-w-md">
         <div className="flex justify-center mb-4">
-          <img
-            src="https://i.postimg.cc/Y08pGqy4/logojpg-removebg-preview.png"
-            alt="Logo"
-            width={120}
-            height={40}
-            className="w-30 h-10 object-contain"
-          />
+        <Link href="/">
+          <div className="flex items-center">
+            <img
+              src="/green-heart-with-leaf-outline_78370-2744-removebg-preview.png"
+              alt="Logo"
+              className="h-14"
+            />
+            <h1 className="ml-2 text-black text-2xl font-bold font-mono tracking-wide">Heartly</h1>
+          </div>
+        </Link>
         </div>
 
         <h2 className="text-2xl font-bold text-gray-900 text-center mb-2">Reset Password 🔐</h2>

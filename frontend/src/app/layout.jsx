@@ -16,12 +16,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Safetyfy",
+  title: "Heartly",
   description: "Women Safety App",
   icons: {
-    icon: "https://i.postimg.cc/Y08pGqy4/logojpg-removebg-preview.png",
-    shortcut: "https://i.postimg.cc/Y08pGqy4/logojpg-removebg-preview.png",
-    apple: "https://i.postimg.cc/Y08pGqy4/logojpg-removebg-preview.png",
+    icon: "/green-heart-with-leaf-outline_78370-2744-removebg-preview.png",
+    shortcut: "/green-heart-with-leaf-outline_78370-2744-removebg-preview.png",
+    apple: "/green-heart-with-leaf-outline_78370-2744-removebg-preview.png",
   },
 };
 
